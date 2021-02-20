@@ -140,8 +140,16 @@ def canceling():
 
 # ,{"Possible Commands":"\nBooking\nCancelling"}
 
+def flush():
+    c=0
+    for a in data.trains_user:
+        if "Number" in a.keys():
+            data.trains_user[c].pop("Number")
+        c+=1
+
 if __name__ == '__main__':
     while True:
+        flush()
         # Show opening screen
         grafics.show([{"Welcome": "This is MINC"}, {"Need help": "Just Type out your desired command"}])
         com = command.find_command(grafics.read([{"What do you want to do": ""}])[0]["What do you want to do"])

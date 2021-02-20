@@ -34,3 +34,4 @@ def make_train():
         n["year"]="2004"
         t.append(n)
         trains.extend(t)
+    return trains

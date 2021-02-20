@@ -23,3 +23,9 @@ def find_command(com):
         return "rem"
     elif "del" in com:
         return "rem"
+    elif "add" in com:
+        return "add"
+    elif "new" in com:
+        return "add"
+    elif "create" in com:
+        return "add"
