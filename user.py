@@ -48,7 +48,7 @@ def booking():
             i = grafics.read([{"Only one available. Choose this one?(y,n)": ""}])[0]["Only one available. Choose this one?(y,n)"]
             if i.lower() in "n":
                 return "na",[]
-            else:
+            elif i.lower() in "y":
                 break
     n = int(grafics.read([{"Number of People": ""}])[0]["Number of People"])
     date=""
@@ -78,7 +78,7 @@ def booking():
         final[len(final)-1]["Date"]=str(date)
         grafics.show(final)
         grafics.show([{"Train": trains[t - 1]["name"]}])
-        y = grafics.read([{"Is that all?(y/n)": ""}])[0]["Is that all?(y/n)"]
+        y = grafics.read([{"Want to book any more tickets?(y/n)": ""}])[0]["Want to book any more tickets?(y/n)"]
         if y.lower() == "y":
             break
         else:
@@ -147,7 +147,7 @@ def flush():
             data.trains_user[c].pop("Number")
         c+=1
 
-if __name__ == '__main__':
+def main():
     while True:
         flush()
         # Show opening screen

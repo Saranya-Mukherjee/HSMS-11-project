@@ -94,7 +94,7 @@ def flush():
             Trains[c].pop("Number")
         c+=1
 
-if __name__ == '__main__':
+def main():
     Trains=data.make_train()
     while True:
         flush()
@@ -110,20 +110,22 @@ if __name__ == '__main__':
             c=0
             for a in Trains:
                 if a["name"]==tr:
-                    print(Trains, c,len(Trains),fin)
+                    # print(Trains, c,len(Trains),fin)
                     Trains[c]["name"]=fin[0]["Name"]
                     Trains[c]["cost per ticket"]=fin[0]["Cost per Ticket"]
                     Trains[c]["source"]=fin[0]["Source"]
                     Trains[c]["destination"]=fin[0]["Destination"]
                     Trains[c]["year"]=fin[0]["Year of Origin"]
-                    print(Trains)
+                    # print(Trains)
                     break
                 c+=1
         elif com=="add":
             fin=add()
-            print(fin)
+            # print(fin)
             if len(fin)!=0:
                 Trains.extend(fin)
-                print(Trains)
+                # print(Trains)
         elif com=="exit":
             exit()
+        else:
+            print("| Co")

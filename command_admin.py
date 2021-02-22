@@ -3,6 +3,8 @@ def find_command(com):
         return "listAll"
     elif "list" in com:
         return "listAll"
+    elif "all" in com:
+        return "listAll"
     elif "details" in com:
         return "listAll"
     elif "exit" in com:
