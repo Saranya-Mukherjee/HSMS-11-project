@@ -135,7 +135,7 @@ def main():
         grafics.show([{"Welcome": "You are in Administrator Mode"}, {"Need help": "Just Type out your desired command"}])
         grafics.show(
             [{"1.": "Edit Trains"}, {"2.": "Add Trains"},{"3.": "Remove Trains"}, {"4.": "See all Trains"}, {"5.": "Exit"}])
-        com = command.find_command(grafics.read([{"What do you want to do": ""}])[0]["What do you want to do"])
+        com = command.find_command_adm(grafics.read([{"What do you want to do": ""}])[0]["What do you want to do"])
         if com=="listAll":
             print("| Here you go with all Trains.")
             grafics.show(Trains)

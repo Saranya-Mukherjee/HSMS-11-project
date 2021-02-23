@@ -1,4 +1,4 @@
-def find_command(com):
+def find_command_adm(com):
     if "show" in com:
         return "listAll"
     elif "list" in com:

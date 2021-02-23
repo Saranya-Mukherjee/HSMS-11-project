@@ -138,7 +138,7 @@ def canceling():
         else:
             print("| Not a valid answer.")
 
-def flush():
+def flush_u():
     c=0
     for a in data.trains_user:
         if "Number" in a.keys():
@@ -147,7 +147,7 @@ def flush():
 
 def main():
     while True:
-        flush()
+        flush_u()
         # Show opening screen
         grafics.show([{"Welcome": "This is MINC"}, {"Need help": "Just Type out your desired command"}])
         print("| Options:")
