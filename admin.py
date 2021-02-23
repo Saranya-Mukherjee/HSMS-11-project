@@ -85,6 +85,40 @@ def add():
 def listAll():
     grafics.show(Trains)
 
+def remove():
+    cop=[]
+    for a in Trains:
+        cop.append(a)
+    names=[x["Name"] for x in cop]
+    # print(Trains)
+    n = 1
+    for a in cop:
+        cop[n - 1]["Number"] = str(n)
+        n += 1
+    print("| Which one you want to remove? :")
+    # print(Trains)
+    grafics.show(Trains)
+    t=1
+    while True:
+        if len(Trains) != 1:
+            t = int(grafics.read([{"Enter train number": ""}])[0]["Enter train number"])
+        if 0 < t <= len(Trains):
+            while True:
+                y = grafics.read([{f"| Are you sure you want to remove {names[t - 1]}?(y/n)": ""}])[0][
+                    f"| Are you sure you want to remove {names[t - 1]}?(y/n)"]
+                if y.lower() == "n":
+                    print("| Redirecting you to the home page...")
+                    return
+                elif y.lower() == "y":
+                    Trains.pop(t - 1)
+                    print(f"| Removed {names[t - 1]}.")
+                    print("| Redirecting you to the home page...")
+                    return
+                else:
+                    print("| Not a valid answer.")
+        else:
+            print("| Not a valid answer.")
+
 Trains=[]
 
 def flush():
@@ -99,6 +133,8 @@ def main():
     while True:
         flush()
         grafics.show([{"Welcome": "You are in Administrator Mode"}, {"Need help": "Just Type out your desired command"}])
+        grafics.show(
+            [{"1.": "Edit Trains"}, {"2.": "Add Trains"},{"3.": "Remove Trains"}, {"4.": "See all Trains"}, {"5.": "Exit"}])
         com = command.find_command(grafics.read([{"What do you want to do": ""}])[0]["What do you want to do"])
         if com=="listAll":
             print("| Here you go with all Trains.")
@@ -125,7 +161,10 @@ def main():
             if len(fin)!=0:
                 Trains.extend(fin)
                 # print(Trains)
+        elif com=="remove":
+            remove()
+            flush()
         elif com=="exit":
             exit()
         else:
-            print("| Co")
+            print("| Couldn't find the specified command.")

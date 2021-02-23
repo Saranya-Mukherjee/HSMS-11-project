@@ -138,8 +138,6 @@ def canceling():
         else:
             print("| Not a valid answer.")
 
-# ,{"Possible Commands":"\nBooking\nCancelling"}
-
 def flush():
     c=0
     for a in data.trains_user:
@@ -152,6 +150,8 @@ def main():
         flush()
         # Show opening screen
         grafics.show([{"Welcome": "This is MINC"}, {"Need help": "Just Type out your desired command"}])
+        print("| Options:")
+        grafics.show([{"1.": "Book tickets"}, {"2.": "Cancel tickets"}, {"3.": "See all booked tickets"}, {"4.": "Exit"}])
         com = command.find_command(grafics.read([{"What do you want to do": ""}])[0]["What do you want to do"])
         if com == "booking":
             tr, det = booking()
@@ -194,3 +194,5 @@ def main():
         elif com == "exit":
             print("| Thanks for visiting us.\n| May you have a happy journey.")
             exit()
+        else:
+            print("| Couldn't find the specified command.")
