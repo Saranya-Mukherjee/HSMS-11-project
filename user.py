@@ -1,12 +1,13 @@
 # This file provides the interface to the common user.
-import grafics
-import data
 import command
+import data
+import grafics
 
-details=[]
+details = []
+
 
 def booking():
-    final=[]
+    final = []
     print("| All Trains: ")
     grafics.show(data.trains_user)
     while True:
@@ -41,7 +42,7 @@ def booking():
             if 0 < t <= len(trains):
                 break
             else:
-                print("| Not a proper train number:")
+                print("| Not a proper train number.")
     if len(trains)==1:
         grafics.show(trains)
         while True:

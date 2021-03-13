@@ -1,7 +1,7 @@
 # This is the file you should be running to start up the entire system
 import admin
-import user
 import grafics
+import user
 
 while True:
     print("| Modes:\n| 1. User\n| 2. Administrator\n")
