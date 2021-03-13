@@ -39,7 +39,7 @@ def edit_train():
             if 0 < t <= len(tra):
                 break
             else:
-                print("| Not a proper train number:")
+                print("| Not a proper train number.")
     if len(tra) == 1:
         grafics.show(tra)
         while True:
